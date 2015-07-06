@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Adding twitter bootstrap gem
+gem "twitter-bootstrap-rails"
+
 # Gem to implement login authentication
 gem 'devise'
 
