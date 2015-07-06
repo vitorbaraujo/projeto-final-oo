@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Simple form
+gem 'simple_form'
+
 # Adding twitter bootstrap gem
 gem "twitter-bootstrap-rails"
 
