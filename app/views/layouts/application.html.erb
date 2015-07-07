@@ -49,8 +49,12 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "About", "/pages/about"  %></li>
             <li><%= link_to "Contact", "/pages/contact"  %></li>
+
+	<% if !user_signed_in? %>
             <li><%= link_to "Register", "/users/sign_up"  %></li>
             <li><%= link_to "Log In", "/users/sign_in"  %></li>
+	<% end %>
+
             <li><%= link_to "Post", "/posts/new" %></li>
           </ul>
             <br><p align="right"><% if user_signed_in? %>
