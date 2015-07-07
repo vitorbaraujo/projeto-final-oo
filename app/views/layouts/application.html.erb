@@ -47,16 +47,12 @@
         <a class="navbar-brand" href="/">Home</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "About", "/pages/about"  %></li>
+            <li><%= link_to "Services", "/pages/product"  %></li>
             <li><%= link_to "Contact", "/pages/contact"  %></li>
 
 	<% if !user_signed_in? %>
             <li><%= link_to "Register", "/users/sign_up"  %></li>
             <li><%= link_to "Log In", "/users/sign_in"  %></li>
-	<% end %>
-
-	<% if user_signed_in? %>
-            <li><%= link_to "New Post", "/posts/new" %></li>
 	<% end %>
 
           </ul>
@@ -71,17 +67,17 @@
       </div>
     </div>
 
-    <div class="container">
+   <div class="container">
       <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Menu</h3>
-            <ul class="nav nav-list">
-              <li><%= link_to "Produtos", "/pages/product"  %></li>
+	<div class="col-lg-9">
+	  <%= bootstrap_flash %>
+	  <%= yield %>
+	</div>
+	<div class="col-lg-3">
+	  <div class="well sidebar-nav">
+	    <h3>Menu</h3>
+	    <ul class="nav nav-list">
+	      <li><%= link_to "Discussões", "/posts" %></li>
               <li><%= link_to "Orçamentos", "/"  %></li>
               <li><%= link_to "Calendário", "/pages/calendar"  %></li>
             </ul>
