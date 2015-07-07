@@ -55,7 +55,10 @@
             <li><%= link_to "Log In", "/users/sign_in"  %></li>
 	<% end %>
 
-            <li><%= link_to "Post", "/posts/new" %></li>
+	<% if user_signed_in? %>
+            <li><%= link_to "New Post", "/posts/new" %></li>
+	<% end %>
+
           </ul>
             <br><p align="right"><% if user_signed_in? %>
               Signed in as <%= current_user.email   %>. Not you?
