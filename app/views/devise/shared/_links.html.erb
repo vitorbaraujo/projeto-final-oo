@@ -1,13 +1,27 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+	<br>Already have an account?
+
+	<%= link_to t('.login', :default => t("helpers.links.Log In")),
+           	              new_session_path(resource_name), :class => 'btn btn-default btn-xs' %>
+
+	<!--<%= link_to "Log in", new_session_path(resource_name) %></b><br />-->
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+ 	<br>Don't have an account?
+	
+ 	<%= link_to t('.signup', :default => t("helpers.links.Sign Up")),
+           	              new_registration_path(resource_name), :class => 'btn btn-default btn-xs' %>
+    </br>
+  <!--<%= link_to "Sign up", new_registration_path(resource_name) %><br />-->
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <br>
+  <%= link_to t('.signup', :default => t("helpers.links.Forgot your password?")),
+           	              new_password_path(resource_name), :class => 'btn btn-default btn-xs' %>
+
+  <!--<%= link_to "Forgot your password?", new_password_path(resource_name) %><br />-->
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

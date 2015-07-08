@@ -21,7 +21,7 @@
      	<tr>
       	<td><%= current_user.username %></td>
         <td><%= current_user.email %></td>
-        <td><%= current_user.created_at %></td>
+        <td><%= current_user.created_at.strftime("%m/%d/%Y - %I:%M%P") %></td>
   	  </tr>
   	<% end %>
   </tbody>
