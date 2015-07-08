@@ -1,0 +1,31 @@
+<%- model_class = Post -%>
+<div class="page-header">
+	<h1>Users</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <% if !@user.blank? %>
+      <th><%= model_class.human_attribute_name(:Email) %></th>       
+    <% else %>
+      <center><h1> :-( </h1>
+      <h3> There are no users registered.</h3></center>
+    <% end %>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.each do |user| %>
+     	
+     	<% if user.email != "admin@admin.org" %>
+	     	<tr>
+	     		<td><%= user.email %></td>
+	     	 	
+	     	 	<td><p align="right"><%= link_to t('.cancel', :default => t("helpers.links.Cancel Registration")),
+	       	              registration_path(current_user), method: :delete, :class => 'btn btn-default btn-xs' %></p></td>  	 	
+	 	    </tr>
+	 	 <% end %>
+  	<% end %>
+  </tbody>
+</table>

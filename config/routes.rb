@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   resources :posts
   root 'pages#home'
 

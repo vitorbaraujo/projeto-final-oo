@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new]
-  
   before_filter :is_owner, only: [:destroy, :edit]
 
   # GET /posts
@@ -79,8 +78,10 @@ class PostsController < ApplicationController
 
     def is_owner
       set_post
-      if @post.user != current_user
-        redirect_to posts_url, notice: 'You have no permission to manage this topic.'
+      if current_user.email != "admin@admin.org"
+        if @post.user_id != current_user.id
+          redirect_to posts_url, notice: 'You have no permission to manage this topic.'
+        end
       end
     end
 end

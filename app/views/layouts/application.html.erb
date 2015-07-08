@@ -49,6 +49,13 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Services", "/pages/product"  %></li>
             <li><%= link_to "Contact", "/pages/contact"  %></li>
+
+            <% if user_signed_in? %>
+              <% if current_user.email == "admin@admin.org" %>
+                <li><%= link_to "Show All Users", "/users/show"  %></li>              
+              <% end %>
+            <% end %>
+
           </ul>
             <br><p align="right"><% if user_signed_in? %>
               Signed in as <%= current_user.email   %>. Not you?
