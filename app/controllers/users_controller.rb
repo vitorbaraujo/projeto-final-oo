@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :is_owner, only: [:show]
-
+  
   def show
   	@user = User.all
   end
