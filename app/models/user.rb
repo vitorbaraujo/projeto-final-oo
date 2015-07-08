@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :authentication_keys => [:login]
 
   has_many :posts
+  has_many :budgets
 
   validates :username,
     :presence => true,

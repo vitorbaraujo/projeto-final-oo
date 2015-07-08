@@ -35,8 +35,8 @@
      	<tr>
      	 	<td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.description %></td>
- 	      <td><%= post.created_at %></td>        
-        <td><%= post.user.email %></td>
+ 	      <td><%= post.created_at.strftime("%m/%d/%Y - %I:%M%P") %></td>        
+        <td><%= post.user.username %></td>
      	  <% if user_signed_in? %> 
           <td>
        	    <%= link_to t('.edit', :default => t("helpers.links.edit")),
