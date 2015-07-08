@@ -78,10 +78,14 @@ class PostsController < ApplicationController
 
     def is_owner
       set_post
-      if current_user.email != "admin@admin.org"
-        if @post.user_id != current_user.id
-          redirect_to posts_url, notice: 'You have no permission to manage this topic.'
+      if user_signed_in?
+        if current_user.username != "admin"
+          if @post.user_id != current_user.id
+            redirect_to posts_url, notice: 'You have no permission to manage this topic.'
+          end
         end
+      else
+        redirect_to posts_url, notice: 'You have no permission to manage this topic.'      
       end
     end
 end

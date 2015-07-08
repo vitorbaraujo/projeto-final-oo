@@ -18,7 +18,10 @@
       <th><%= model_class.human_attribute_name(:Description) %></th>
       <th><%= model_class.human_attribute_name(:Date) %></th>
       <th><%= model_class.human_attribute_name(:Owner) %></th>
-      <th><%=t '.actions', :default => t("helpers.Manage") %></th>
+      
+      <% if user_signed_in? %>
+        <th><%=t '.actions', :default => t("helpers.Manage") %></th>
+      <% end %>
     
     <% else %>
       <center><h1> :-( </h1>
@@ -34,15 +37,17 @@
         <td><%= post.description %></td>
  	      <td><%= post.created_at %></td>        
         <td><%= post.user.email %></td>
-   	    <td>
-     	    <%= link_to t('.edit', :default => t("helpers.links.edit")),
-       	              edit_post_path(post), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-           	          post_path(post),
-             	        :method => :delete,
-                	      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                  	    :class => 'btn btn-xs btn-danger' %>
-        </td>
+     	  <% if user_signed_in? %> 
+          <td>
+       	    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+         	              edit_post_path(post), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+             	          post_path(post),
+               	        :method => :delete,
+                  	      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    	    :class => 'btn btn-xs btn-danger' %>
+          </td>
+        <% end %>
  	    </tr>
   	<% end %>
   </tbody>
