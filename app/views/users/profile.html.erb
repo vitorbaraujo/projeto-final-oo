@@ -1,0 +1,28 @@
+<%- model_class = User -%>
+<div class="page-header">
+	<h1>Your Profile</h1>
+</div>
+
+<p align="right"><%= link_to t('.new', :default => t("helpers.links.Edit Profile")),
+            edit_user_registration_path,
+            :class => 'btn btn-primary' %></p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:Username) %></th>       
+      <th><%= model_class.human_attribute_name(:Email) %></th>       
+      <th><%= model_class.human_attribute_name(:Created_At) %></th>       
+    </tr>
+  </thead>
+
+<tbody>
+    <% if user_signed_in? %>
+     	<tr>
+      	<td><%= current_user.username %></td>
+        <td><%= current_user.email %></td>
+        <td><%= current_user.created_at %></td>
+  	  </tr>
+  	<% end %>
+  </tbody>
+</table>

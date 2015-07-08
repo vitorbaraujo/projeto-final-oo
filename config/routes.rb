@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :budgets
   get 'users/show'
+  get 'users/profile'
 
   resources :posts
   root 'pages#home'

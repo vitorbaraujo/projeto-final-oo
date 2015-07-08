@@ -51,10 +51,14 @@
             <li><%= link_to "Contact", "/pages/contact"  %></li>
 
             <% if user_signed_in? %>
+              <li><%= link_to "Your Profile", "/users/profile"  %></li>              
+
               <% if current_user.email == "admin@admin.org" %>
                 <li><%= link_to "Show All Users", "/users/show"  %></li>              
               <% end %>
             <% end %>
+
+
 
           </ul>
             <br><p align="right"><% if user_signed_in? %>
