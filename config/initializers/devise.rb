@@ -22,6 +22,8 @@ Devise.setup do |config|
   config.reset_password_keys = [ :username ]
   config.confirmation_keys = [ :username ]
 
+  config.authentication_keys = [ :login ]
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
