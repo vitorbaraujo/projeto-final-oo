@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'pages/contact'
-
   get 'pages/about'
+  get 'pages/product'
+  get 'pages/calendar'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

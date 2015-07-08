@@ -47,11 +47,8 @@
         <a class="navbar-brand" href="/">Home</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "About", "/pages/about"  %></li>
+            <li><%= link_to "Services", "/pages/product"  %></li>
             <li><%= link_to "Contact", "/pages/contact"  %></li>
-            <li><%= link_to "Register", "/users/sign_up"  %></li>
-            <li><%= link_to "Log In", "/users/sign_in"  %></li>
-            <li><%= link_to "Post", "/posts/new" %></li>
           </ul>
             <br><p align="right"><% if user_signed_in? %>
               Signed in as <%= current_user.email   %>. Not you?
@@ -64,19 +61,19 @@
       </div>
     </div>
 
-    <div class="container">
+   <div class="container">
       <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Menu</h3>
-            <ul class="nav nav-list">
-              <li><%= link_to "Produtos", "/"  %></li>
-              <li><%= link_to "Orçamentos", "/"  %></li>
-              <li><%= link_to "Calendário", "/"  %></li>
+	<div class="col-lg-9">
+	  <%= bootstrap_flash %>
+	  <%= yield %>
+	</div>
+	<div class="col-lg-3">
+	  <div class="well sidebar-nav">
+	    <h3>Menu</h3>
+	    <ul class="nav nav-list">
+	      <li><%= link_to "Discussions", "/posts" %></li>
+              <li><%= link_to "Budget", "/"  %></li>
+              <li><%= link_to "Calendar", "/pages/calendar"  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

@@ -7,4 +7,10 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def product
+  end
+
+  def calendar
+  end
 end
