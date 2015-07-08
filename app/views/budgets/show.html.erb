@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @budget.type %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @budget.place %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @budget.date %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @budget.service %>
+</p>
+
+<p>
+  <strong>Stay contact:</strong>
+  <%= @budget.stay_contact %>
+</p>
+
+<%= link_to 'Edit', edit_budget_path(@budget) %> |
+<%= link_to 'Back', budgets_path %>
