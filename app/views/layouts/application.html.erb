@@ -49,12 +49,6 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Services", "/pages/product"  %></li>
             <li><%= link_to "Contact", "/pages/contact"  %></li>
-
-	<% if !user_signed_in? %>
-            <li><%= link_to "Register", "/users/sign_up"  %></li>
-            <li><%= link_to "Log In", "/users/sign_in"  %></li>
-	<% end %>
-
           </ul>
             <br><p align="right"><% if user_signed_in? %>
               Signed in as <%= current_user.email   %>. Not you?
@@ -77,9 +71,9 @@
 	  <div class="well sidebar-nav">
 	    <h3>Menu</h3>
 	    <ul class="nav nav-list">
-	      <li><%= link_to "Discussões", "/posts" %></li>
-              <li><%= link_to "Orçamentos", "/"  %></li>
-              <li><%= link_to "Calendário", "/pages/calendar"  %></li>
+	      <li><%= link_to "Discussions", "/posts" %></li>
+              <li><%= link_to "Budget", "/"  %></li>
+              <li><%= link_to "Calendar", "/pages/calendar"  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
